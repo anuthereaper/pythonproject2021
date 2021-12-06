@@ -5,6 +5,9 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from pydantic import BaseSettings
 
+from fastapi import Body, FastAPI, status
+from fastapi.responses import JSONResponse
+
 class Order_info(BaseSettings):
     #app_name: str = "Awesome API"
     order_id: int = 0
@@ -54,8 +57,9 @@ async def get_orders(option : int):
         if i.id == option:
             print(i)
             return i
-        
-    return "Not found"
+
+    return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content="")    
+    #return "Not found"
 #@app.post()
 #@app.put()
 #@app.delete()

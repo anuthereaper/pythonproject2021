@@ -9,6 +9,8 @@ from pydantic import BaseSettings
 import pyodbc
 import collections
 import json
+from fastapi import Body, FastAPI, status
+from fastapi.responses import JSONResponse
 
 def insert_row(conn,insert_sql):
     cursor = conn.cursor()
@@ -89,7 +91,10 @@ async def get_orders(option : int):
     orders_str = select_rows(conn,sql_stmt)
     orders_json = json.loads(orders_str)
     #print(orders_json)
-    return orders_json
+    if len(order_json) == 0:
+        return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=order_json)    
+    else:
+        return orders_json
 
 #@app.post()
 #@app.put()
