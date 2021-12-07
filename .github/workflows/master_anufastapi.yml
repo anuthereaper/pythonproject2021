@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'anufastapi'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_27AC6F8547B04905B66C562A2D958A3A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_12FA5F4186714F2FA689F934371FD000 }}
