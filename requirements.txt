@@ -1,5 +1,5 @@
 ###### Requirements with Version Specifiers ######
 fastapi==0.70.0
 pydantic==1.8.2
-typing==3.10.0.0
+typing
 fastapi.responses==0.2.1
