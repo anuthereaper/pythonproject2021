@@ -91,8 +91,8 @@ async def get_orders(option : int):
     orders_str = select_rows(conn,sql_stmt)
     orders_json = json.loads(orders_str)
     #print(orders_json)
-    if len(order_json) == 0:
-        return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=order_json)    
+    if len(orders_json) == 0:
+        return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=orders_json)    
     else:
         return orders_json
 
