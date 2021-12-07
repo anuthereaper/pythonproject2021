@@ -1,0 +1,5 @@
+###### Requirements with Version Specifiers ######
+fastapi
+pydantic
+typing
+fastapi.responses
